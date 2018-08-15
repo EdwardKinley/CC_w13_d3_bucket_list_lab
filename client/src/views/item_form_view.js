@@ -19,7 +19,7 @@ ItemFormView.prototype.handleSubmit = function (evt) {
 
 ItemFormView.prototype.createItem = function (form) {
   const newItem = {
-    itemDetail: form.itemDetail.value
+    item: form.item.value
   }
   return newItem;
 };

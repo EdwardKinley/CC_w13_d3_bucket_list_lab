@@ -9,7 +9,6 @@ ItemView.prototype.render = function (item) {
   itemContainer.id = 'item';
 
   const itemDetail = this.createDetail(item.item);
-  console.log(item.itemDetail);
   console.log(item.item);
   itemContainer.appendChild(itemDetail);
 

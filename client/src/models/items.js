@@ -8,7 +8,13 @@ const Items = function (url) {
 };
 
 Items.prototype.bindEvents = function () {
+  PubSub.subscribe('ItemView:item-delete-clicked', (evt) => {
+    this.deleteItem(evt.detail);
+  });
 
+  PubSub.subscribe('ItemView:item-submitted', (evt) => {
+    this.postItem(evt.detail);
+  });
 };
 
 Items.prototype.getData = function () {
@@ -31,7 +37,11 @@ Items.prototype.postItem = function (item) {
 };
 
 Items.prototype.deleteItem = function () {
-
+  this.request.delete(itemId)
+  .then((items) => {
+    PubSub.publish('Items:data-loaded', items);
+  })
+  .catch(console.error);
 };
 
 module.exports = Items;
