@@ -21,6 +21,7 @@ ItemView.prototype.render = function (item) {
 ItemView.prototype.createDetail = function (text) {
   const detail = document.createElement('p');
   detail.textContent = text;
+  detail.classList.add('listItem');
   return detail;
 };
 
