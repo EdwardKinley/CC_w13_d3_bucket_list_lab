@@ -36,7 +36,7 @@ Items.prototype.postItem = function (item) {
   .catch(console.error);
 };
 
-Items.prototype.deleteItem = function () {
+Items.prototype.deleteItem = function (itemId) {
   this.request.delete(itemId)
   .then((items) => {
     PubSub.publish('Items:data-loaded', items);

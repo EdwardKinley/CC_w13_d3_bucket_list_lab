@@ -1,3 +1,15 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
 }
+
+button.delete-btn {
+  border: none;
+  padding: 0;
+}
+
+.delete-btn {
+ width: 20px;
+ height: 20px;
+ background: url(../images/delete_button.png);
+ background-size: 20px;
+}

@@ -12,8 +12,8 @@ ItemView.prototype.render = function (item) {
   console.log(item.item);
   itemContainer.appendChild(itemDetail);
 
-  // const deleteButton = this.createDeleteButton(item._id);
-  // itemContainer.appendChild(deleteButton);
+  const deleteButton = this.createDeleteButton(item._id);
+  itemContainer.appendChild(deleteButton);
 
   this.container.appendChild(itemContainer);
 };
@@ -24,6 +24,16 @@ ItemView.prototype.createDetail = function (text) {
   return detail;
 };
 
-// add deletebutton
+ItemView.prototype.createDeleteButton = function (itemId) {
+  const button = document.createElement('button');
+  button.classList.add('delete-btn');
+  button.value = itemId;
+
+  button.addEventListener('click', (evt) => {
+    PubSub.publish('ItemView:item-delete-clicked', evt.target.value);
+  });
+
+  return button;
+};
 
 module.exports = ItemView;
