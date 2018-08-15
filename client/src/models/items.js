@@ -15,7 +15,18 @@ Items.prototype.bindEvents = function () {
   PubSub.subscribe('ItemView:item-submitted', (evt) => {
     this.postItem(evt.detail);
   });
+
+  PubSub.subscribe('ItemView:ItemView:item-completed-clicked', (evt) => {
+    this.put(evt.detail);
+  });
 };
+
+// Items.prototype.put = function () {
+//   this.request.put()
+//   .then((items) => {
+//     PubSub
+//   })
+// };
 
 Items.prototype.getData = function () {
   this.request.get()

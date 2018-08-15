@@ -2,19 +2,24 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   background: url(../images/balloons.png) no-repeat center center fixed;
   background-size: cover;
-
-}
-
-button.delete-btn {
-  border: none;
-  padding: 0;
 }
 
 .delete-btn {
- width: 20px;
- height: 20px;
- background: url(../images/delete_button.png);
- background-size: 20px;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../images/delete_button.png);
+  background-size: 20px;
+}
+
+.completed-btn {
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../images/tick2.png);
+  background-size: 20px;
 }
 
 .wrapper {
@@ -33,7 +38,7 @@ h1 {
 }
 
 h3 {
-  font-size: 2rem;  
+  font-size: 2rem;
 }
 
 div {
@@ -57,4 +62,18 @@ input {
   margin: 1rem;
   font-family: 'Josefin Sans', sans-serif;
   width: 18rem;
+}
+
+#item {
+  display: inline-block;
+  text-align: center;
+}
+
+button {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.list {
+  background-color: grey;
 }
